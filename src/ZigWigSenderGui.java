@@ -6,9 +6,9 @@ public class ZigWigSenderGui extends JFrame {
     JTextField otherName;
     JTextField otherAge;
     JTextField otherGender;
-    public ZigWigSenderGui(ZigWigSender zigWigSender)
+    public ZigWigSenderGui()
     {
-        this.zigWigSender = zigWigSender;
+
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(600,600);
         JTextField nameField = new JTextField();

@@ -10,10 +10,16 @@ public class Main {
             System.out.println(input);
             System.out.println("please input server or client");
         }
-        ZigWigSender server = new ZigWigSender( input.equalsIgnoreCase("server"));
+        var zsg = new ZigWigSenderGui();
 
-        ZigWigSenderGui zsg = new ZigWigSenderGui(server);
-        server.setZigWigSenderGui(zsg);
+        var sender = new ZigWigSender( input.equalsIgnoreCase("server"));
+
+        zsg.setZigWigSender(sender);
+        sender.setZigWigSenderGui(zsg);
+        sender.start();
+
+
+
 
 
 

@@ -14,8 +14,13 @@ public class ZigWigSender {
     ObjectInputStream inputStream;
     ObjectOutputStream outputStream;
     ZigWigSenderGui zsg;
+    boolean server;
 
     public ZigWigSender(boolean server) throws IOException {
+        this.server = server;
+    }
+    public void start()
+    {
 
         // while(connection == null || connection.isClosed()) {
         System.out.println("Waiting for connection. Window will pop up when connected");
@@ -28,9 +33,9 @@ public class ZigWigSender {
             }
         }
         try ( ServerSocket serverSocket = this.serverSocket = server?new ServerSocket(1234, 10):null;
-             Socket connection = server? this.connection = serverSocket.accept():new Socket(InetAddress.getByName(ip),1234);
-             ObjectOutputStream outputStream = this.outputStream = new ObjectOutputStream(connection.getOutputStream());
-             ObjectInputStream inputStream = this.inputStream = new ObjectInputStream(connection.getInputStream())) {
+              Socket connection = server? this.connection = serverSocket.accept():new Socket(InetAddress.getByName(ip),1234);
+              ObjectOutputStream outputStream = this.outputStream = new ObjectOutputStream(connection.getOutputStream());
+              ObjectInputStream inputStream = this.inputStream = new ObjectInputStream(connection.getInputStream())) {
 
             System.out.println("connection started - " + (server ? "server":"client"));
             outputStream.flush();
