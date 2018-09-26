@@ -7,7 +7,7 @@ public class ZigWig implements Serializable {
     String gender;
 
     public ZigWig(String ageFieldText, String nameFieldText, String genderFieldText) {
-        try{age = Integer.parseInt(ageFieldText)}
+        try{age = Integer.parseInt(ageFieldText);}
         catch(NumberFormatException e)
         {
             JOptionPane.showMessageDialog(null,"put in age incorrectly");
