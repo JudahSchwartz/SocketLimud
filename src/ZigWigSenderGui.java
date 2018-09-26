@@ -16,8 +16,9 @@ public class ZigWigSenderGui extends JFrame {
         JTextField ageField = new JTextField();
         JTextField genderField = new JTextField();
         setLayout(new GridLayout(8,5));
-        add(nameField);
         add(ageField);
+        add(nameField);
+
         add(genderField);
 
 
@@ -33,8 +34,9 @@ public class ZigWigSenderGui extends JFrame {
         otherAge = new JTextField();
         otherAge.setEditable(false);
 
-        add(otherName);
         add(otherAge);
+        add(otherName);
+
         add(otherGender);
 
         setVisible(true);
@@ -50,4 +52,7 @@ public class ZigWigSenderGui extends JFrame {
         otherGender.setText(genderFieldText);
     }
 
+    public void setZigWigSender(ZigWigSender zs) {
+        zigWigSender = zs;
+    }
 }
