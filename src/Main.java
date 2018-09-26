@@ -10,7 +10,7 @@ public class Main {
             System.out.println(input);
             System.out.println("please input server or client");
         }
-        Server server = new Server( input.equalsIgnoreCase("server"));
+        ZigWigSender server = new ZigWigSender( input.equalsIgnoreCase("server"));
 
         ZigWigSenderGui zsg = new ZigWigSenderGui(server);
         server.setZigWigSenderGui(zsg);
