@@ -15,10 +15,13 @@ public class ZigWigSenderGui extends JFrame {
 
         JTextField ageField = new JTextField();
         JTextField genderField = new JTextField();
-        setLayout(new GridLayout(8,5));
+        setLayout(new GridLayout(11,5));
+        add(new JLabel("Age"));
         add(ageField);
+        add(new JLabel("name"));
         add(nameField);
 
+        add(new JLabel("gender"));
         add(genderField);
 
 

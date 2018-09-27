@@ -58,10 +58,12 @@ public class ZigWigSender {
     }
     public void sendZigWig(String ageFieldText, String nameFieldText, String genderFieldText) {
         ZigWig z = new ZigWig(ageFieldText,nameFieldText,genderFieldText);
-        try {
-            outputStream.writeObject(z);
-        } catch (IOException e) {
-            e.printStackTrace();
+        if(outputStream != null) {
+            try {
+                outputStream.writeObject(z);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
     }
