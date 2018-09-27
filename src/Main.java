@@ -6,10 +6,7 @@ public class Main {
 
 
         String input;
-        while (!((input = JOptionPane.showInputDialog("Are you client or server?")).equalsIgnoreCase("server") || input.equalsIgnoreCase("client"))) {
-            System.out.println(input);
-            System.out.println("please input server or client");
-        }
+        while (!((input = JOptionPane.showInputDialog("Are you client or server?")).equalsIgnoreCase("server") || input.equalsIgnoreCase("client")));
         var zsg = new ZigWigSenderGui();
 
         var sender = new ZigWigSender( input.equalsIgnoreCase("server"));

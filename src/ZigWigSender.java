@@ -26,12 +26,6 @@ public class ZigWigSender {
         System.out.println("Waiting for connection. Window will pop up when connected");
 
         String ip = null;
-        if(! server) {
-            ip = JOptionPane.showInputDialog("Whats the server's ip?");
-            if (ip.equals("?")) {
-                ip = null;
-            }
-        }
         try ( ServerSocket serverSocket = this.serverSocket = server?new ServerSocket(1234, 10):null;
               Socket connection = server? this.connection = serverSocket.accept():new Socket(InetAddress.getByName(ip),1234);
               ObjectOutputStream outputStream = this.outputStream = new ObjectOutputStream(connection.getOutputStream());
